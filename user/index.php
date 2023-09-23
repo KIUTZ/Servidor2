@@ -3,7 +3,6 @@ if($_POST){
     header('Location:inicio.php');
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -26,6 +25,11 @@ if($_POST){
             <div class="card">
                 <div class="card-header">
                     Login
+                    <?php
+                        include("../bd/bd.php");
+                        include("../bd/controlador.php");
+
+                    ?>
                 </div>
                 <div class="card-body">
 
@@ -33,13 +37,13 @@ if($_POST){
 
                         <div class = "form-group">
                             <label for="exampleInputEmail1"> Usuario </label>
-                            <input type="text" class="form-control" name="usuario" placeholder="Escribe tu usuario">
+                            <input type="text" class="form-control" name="usuariologin" placeholder="Escribe tu usuario">
                             <small id="emailHelp" class="form-text text-muted"> </small>
                         </div>
 
                         <div class="form-group">
                             <label>Contraseña: </label>
-                            <input type="password" class="form-control" name="contrasenia" placeholder="Escribe tu contraseña">
+                            <input type="password" class="form-control" name="contrasenialogin" placeholder="Escribe tu contraseña">
                         </div>
 
                         <div class="form-check">
@@ -47,7 +51,7 @@ if($_POST){
                             <label class="form-check-label" for="exampleCheck1">Recuérdame</label>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Inicia sesión</button>
+                        <button name="ingresar" type="submit" class="btn btn-primary">Inicia sesión</button>
                     </form>
 
                 </div>

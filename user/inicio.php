@@ -1,3 +1,16 @@
+
+<?php
+/*
+session_start();
+if(!isset($_SESSION['usuario'])){
+    header("Location:../user/index.php");
+}else{
+
+}if($_SESSION['usuario']=="ok"){
+    $nombreUsuario=$_SESSION["nombreUsuario"];
+}*/
+?>
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -11,13 +24,13 @@
     </head>
 
     <body>
-        <?php $url="http://".$_SERVER['']?>
+        <?php $url="http://".$_SERVER['HTTP_HOST']?>
         <nav class="navbar navbar-expand navbar-light bg-light">
             <div class="nav navbar-nav">
                 <a class="nav-item nav-link active" href="#"> Bienvenido, usuario</a>
-                <a class="nav-item nav-link" href="#">Inicio</a>
-                <a class="nav-item nav-link" href="#">Cerrar sesión</a>
-                <a class="nav-item nav-link" href="#">Ver sitio web</a>
+                <a class="nav-item nav-link" href="<?php echo $url;?>/user/inicio.php">Inicio</a>
+                <a class="nav-item nav-link" href="<?php echo $url;?>/user/cerrar.php">Cerrar sesión</a>
+                <a class="nav-item nav-link" href="<?php echo $url;?>">Ver sitio web</a>
             </div>
         </nav>
 
@@ -26,8 +39,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="jumbotron">
-                        <h1 class="display-3">Jumbo heading</h1>
-                        <p class="lead">Jumbo helper text</p>
+                        <h1 class="display-3">Mediciones</h1>
+                        <p class="lead">La medición de su sonda es: </p>
                         <hr class="my-2">
                         <p>More info</p>
                         <p class="lead">
