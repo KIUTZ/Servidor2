@@ -1,18 +1,21 @@
-
 <?php
-/*
+/*Si no has iniciado sesión, no puedes entrar a la página de inicio
 session_start();
 if(!isset($_SESSION['usuario'])){
-    header("Location:../user/index.php");
+    header("Location:../user/login.php");
 }else{
+    if($_SESSION['ususario']=="ok"){
 
-}if($_SESSION['usuario']=="ok"){
-    $nombreUsuario=$_SESSION["nombreUsuario"];
+    }
+$nombre = $_SESSION['nombre'];
+echo "El nombre del usuario es: " . $nombre;
 }*/
+
 ?>
 
 <!doctype html>
 <html lang="en">
+
     <head>
         <title>Title</title>
         <!-- Required meta tags -->
@@ -27,7 +30,7 @@ if(!isset($_SESSION['usuario'])){
         <?php $url="http://".$_SERVER['HTTP_HOST']?>
         <nav class="navbar navbar-expand navbar-light bg-light">
             <div class="nav navbar-nav">
-                <a class="nav-item nav-link active" href="#"> Bienvenido, usuario</a>
+                <a class="nav-item nav-link active" href="#"> Bienvenido, Usuario </a>
                 <a class="nav-item nav-link" href="<?php echo $url;?>/user/inicio.php">Inicio</a>
                 <a class="nav-item nav-link" href="<?php echo $url;?>/user/cerrar.php">Cerrar sesión</a>
                 <a class="nav-item nav-link" href="<?php echo $url;?>">Ver sitio web</a>
@@ -39,6 +42,7 @@ if(!isset($_SESSION['usuario'])){
             <div class="row">
                 <div class="col-md-12">
                     <div class="jumbotron">
+
                         <h1 class="display-3">Mediciones</h1>
                         <p class="lead">La medición de su sonda es: </p>
                         <hr class="my-2">

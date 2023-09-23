@@ -20,7 +20,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="../user/index.php">Login</a>
+            <a class="nav-link" href="../user/login.php">Login</a>
         </li>
 
     </ul>
