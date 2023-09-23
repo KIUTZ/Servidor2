@@ -1,8 +1,4 @@
-<?php
-if($_POST){
-    header('Location:inicio.php');
-}
-?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,11 +21,6 @@ if($_POST){
             <div class="card">
                 <div class="card-header">
                     Login
-                    <?php
-                        include("../bd/bd.php");
-                        include("../bd/controlador.php");
-
-                    ?>
                 </div>
                 <div class="card-body">
 
@@ -50,7 +41,10 @@ if($_POST){
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">Recuérdame</label>
                         </div>
-
+                        <?php
+                        include("../bd/bd.php");
+                        include("../bd/controlador.php");
+                        ?>
                         <button name="ingresar" type="submit" class="btn btn-primary">Inicia sesión</button>
                     </form>
 
