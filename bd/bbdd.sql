@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `proyecto3a` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `proyecto3a`;
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
 -- Host: localhost    Database: proyecto3a
@@ -77,6 +79,31 @@ INSERT INTO `sonda` VALUES (1,1,73667766,90,'ok');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `testb`
+--
+
+DROP TABLE IF EXISTS `testb`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `testb` (
+  `ID` int(10) NOT NULL AUTO_INCREMENT,
+  `major` int(10) NOT NULL,
+  `minor` int(10) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `testb`
+--
+
+LOCK TABLES `testb` WRITE;
+/*!40000 ALTER TABLE `testb` DISABLE KEYS */;
+INSERT INTO `testb` VALUES (1,6,6),(2,6,6),(3,6,6);
+/*!40000 ALTER TABLE `testb` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `usuarios`
 --
 
@@ -114,4 +141,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-02 13:43:21
+-- Dump completed on 2023-10-02 15:29:35
