@@ -36,24 +36,24 @@ session_start();
                     <h1 class="display-3">Mediciones</h1>
                     <p class="lead">La medición de su sonda es: </p>
                     <hr class="my-2">
-                    <p>More info</p>
-                    <p class="lead">
-                        <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
-                    </p>
                     <?php
                     // Incluye la conexión y datos desde el archivo db_connection.php
                     include '../bd/controlador.php';
 
+                    //Muestra los datos de la conexión
                     if (!empty($row)) {
-                        echo "<h2>Última entrada de la tabla testB:</h2>";
                         echo "<p>ID: " . $row["ID"] . "</p>";
-                        echo "<p>Campo1: " . $row["major"] . "</p>"; // Reemplaza "campo1" con el nombre de tu columna
-                        echo "<p>Campo2: " . $row["minor"] . "</p>"; // Reemplaza "campo2" con el nombre de tu columna
-                        // Agrega más campos según sea necesario
+                        echo "<p>Major: " . $row["major"] . "</p>"; 
+                        echo "<p>Minor: " . $row["minor"] . "</p>"; 
+    
                     } else {
                         echo "<p>No se encontraron entradas en la tabla testB.</p>";
                     }
                     ?>
+                       <p>More info</p>
+                    <p class="lead">
+                        <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
+                    </p>
                 </div>
             </div>
         </div>
