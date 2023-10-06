@@ -41,9 +41,9 @@ session_start();
 
                     //Muestra los datos de la conexión
                     if (!empty($row)) {
-                        echo "<p>ID: " . $row["ID"] . "</p>";
-                        echo "<p>Major: " . $row["major"] . "</p>"; 
-                        echo "<p>Minor: " . $row["minor"] . "</p>"; 
+                        echo "<p>ID: " . $row["id"] . "</p>";
+                        echo "<p>Major: " . $row["Temperatura"] . "</p>"; 
+                        echo "<p>Minor: " . $row["Contaminacion"] . "</p>"; 
     
                     } else {
                         echo "<p>No se encontraron entradas en la tabla testB.</p>";
