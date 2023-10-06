@@ -1,4 +1,10 @@
 <?php
+//----------------------------------------------------------------
+// Zaida Pastor González
+//recibir_json.php
+//Api que gestiona los datos recibidos de android y los inserta en la tabla correspondiente, en este caso minor y major.
+//----------------------------------------------------------------
+
 $json_data = file_get_contents('php://input');
 $data = json_decode($json_data);
 

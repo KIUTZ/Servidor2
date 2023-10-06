@@ -1,4 +1,10 @@
 <?php
+//----------------------------------------------------------------
+// Zaida Pastor González
+//controlador.php
+//Consulta los datos de la tabla testB, con sus ultimos valores de minor y major.
+//----------------------------------------------------------------
+
 // Establece la conexión con la base de datos (reemplaza los valores según tu configuración)
 $servername = "localhost";
 $username = "root";
