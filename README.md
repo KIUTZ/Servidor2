@@ -10,16 +10,16 @@ En su versión inicial, he construido un login simple para poder visualizar las 
 
 Mi opción ha sido usar xampp, así que comenzaremos con una instalación limpia de este en C:.
 
-1.Clonar el repositorio de este proyecto.
-2.Colocar los archivos del repositorio en la siguiente ruta C:\xampp\htdocs
-2.Arrancar xampp con permisos de administrador.
-3.En el panel de xampp, empezar los servicios de Apache y MYSQL.
-4.En MYSQL, pulsar en admin para abrir phpmyadmin.
-5.Importar la base de datos SQL incluida en este proyecto. 
-6.Comprobar que tanto arduino como android funcionan correctamente y envían datos.
-7.Acceder desde cualquier navegador a localhost.
-8.Las credenciales para iniciar sesión son usuario: Admin y contraseña: 1234.
-9.El ID, minor y major de la última medición aparecerán en la pantalla.
+1. Clonar el repositorio de este proyecto.
+2. Colocar los archivos del repositorio en la siguiente ruta C:\xampp\htdocs
+3. Arrancar xampp con permisos de administrador.
+4. En el panel de xampp, empezar los servicios de Apache y MYSQL.
+5. En MYSQL, pulsar en admin para abrir phpmyadmin.
+6. Importar la base de datos SQL incluida en este proyecto. 
+7. Comprobar que tanto arduino como android funcionan correctamente y envían datos.
+8. Acceder desde cualquier navegador a localhost.
+9. Las credenciales para iniciar sesión son usuario: Admin y contraseña: 1234.
+10. El ID, minor y major de la última medición aparecerán en la pantalla.
 
 ## Bugs conocidos
 ### Bugs con la base de datos
