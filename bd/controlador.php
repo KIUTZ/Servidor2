@@ -18,7 +18,7 @@ if ($conn->connect_error) {
     die("Error en la conexión a la base de datos: " . $conn->connect_error);
 }
 
-// Realiza la consulta SQL para obtener la última entrada de la tabla testB
+// Realiza la consulta SQL para obtener la última entrada de la tabla medicion
 $sql = "SELECT * FROM medicion ORDER BY id DESC LIMIT 1"; // Ordena por ID de forma descendente y limita a 1 resultado
 
 $result = $conn->query($sql);

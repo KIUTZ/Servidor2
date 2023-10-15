@@ -21,9 +21,14 @@ Mi opción ha sido usar xampp, así que comenzaremos con una instalación limpia
 9. Las credenciales para iniciar sesión son usuario: Admin y contraseña: 1234.
 10. El ID, minor y major de la última medición aparecerán en la pantalla.
 
+## Como ejecutar los tests
+### Test de inserción y borrado en la base de datos, tabla de medicion y usuarios
+Con el servidor operativo, acceder desde cualquier navegador a esta url: http://localhost/tests/test_bd.php. O bien pulsar
+en la pantalla de incio el botón tests. Una vez dentro, se obrevarán los datos introducidos y si han pasado con éxito las pruebas o no.También hay un botón salir para volver a la página de inicio.
+
 ## Bugs conocidos
 ### Bugs con la base de datos
-Si al tener todo funcionando, solo aparece una medida con id 0 en la página web, comprobar que en la base de datos la tabla medicion 
+Si al tener todo funcionando, solo aparece una medida con id 0 en la página web, comprobar que en la base de datos, la tabla medicion 
 tenga el id autoincremental. Ya que para mostrar la última medida, ordeno de forma descendiente el id. El bug me ocurrió cuando traté de 
 probar en un ordenador diferente empezando todo de cero, y todavía no se si se debe a un error en la exportación o importación de la 
 base de datos.

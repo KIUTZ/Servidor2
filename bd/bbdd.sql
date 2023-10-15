@@ -35,8 +35,9 @@ CREATE TABLE `medicion` (
   `Temperatura` float NOT NULL,
   `Contaminacion` float NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `Id Sonda` (`id sonda`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4;
+  KEY `idsonda` (`id sonda`),
+  CONSTRAINT `idsonda` FOREIGN KEY (`id sonda`) REFERENCES `sonda` (`id sonda`) ON DELETE NO ACTION ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +46,7 @@ CREATE TABLE `medicion` (
 
 LOCK TABLES `medicion` WRITE;
 /*!40000 ALTER TABLE `medicion` DISABLE KEYS */;
-INSERT INTO `medicion` VALUES (1,1,'0000-00-00','00:00:00.000000',0,0,0,0,0),(2,0,'0000-00-00','00:00:00.000000',0,0,0,2842,35474),(3,0,'0000-00-00','00:00:00.000000',0,0,0,19823,27745),(4,0,'0000-00-00','00:00:00.000000',0,0,0,2842,35474),(5,0,'0000-00-00','00:00:00.000000',0,0,0,2843,35474),(6,0,'0000-00-00','00:00:00.000000',0,0,0,2843,35474),(7,0,'0000-00-00','00:00:00.000000',0,0,0,2869,0),(8,0,'0000-00-00','00:00:00.000000',0,0,0,3125,65518),(9,0,'0000-00-00','00:00:00.000000',0,0,0,2844,35474),(10,0,'0000-00-00','00:00:00.000000',0,0,0,19823,27745),(11,0,'0000-00-00','00:00:00.000000',0,0,0,3001,69),(12,0,'0000-00-00','00:00:00.000000',0,0,0,3002,69),(13,0,'0000-00-00','00:00:00.000000',0,0,0,3003,69),(14,0,'0000-00-00','00:00:00.000000',0,0,0,3003,69),(15,0,'0000-00-00','00:00:00.000000',0,0,0,2817,69),(16,0,'0000-00-00','00:00:00.000000',0,0,0,2818,69),(17,0,'0000-00-00','00:00:00.000000',0,0,0,2819,69),(18,0,'0000-00-00','00:00:00.000000',0,0,0,2819,69),(19,0,'0000-00-00','00:00:00.000000',0,0,0,2819,69),(20,0,'0000-00-00','00:00:00.000000',0,0,0,2820,69),(21,0,'0000-00-00','00:00:00.000000',0,0,0,2817,1632),(22,0,'0000-00-00','00:00:00.000000',0,0,0,2817,1632),(23,0,'0000-00-00','00:00:00.000000',0,0,0,2817,1632),(24,0,'0000-00-00','00:00:00.000000',0,0,0,2818,1632),(25,0,'0000-00-00','00:00:00.000000',0,0,0,2818,1632),(26,0,'0000-00-00','00:00:00.000000',0,0,0,2819,1632),(27,0,'0000-00-00','00:00:00.000000',0,0,0,2819,1632),(28,0,'0000-00-00','00:00:00.000000',0,0,0,2820,1632),(29,0,'0000-00-00','00:00:00.000000',0,0,0,2820,1632),(30,0,'0000-00-00','00:00:00.000000',0,0,0,2820,1632),(31,0,'0000-00-00','00:00:00.000000',0,0,0,2821,1632),(32,0,'0000-00-00','00:00:00.000000',0,0,0,2821,1632),(33,0,'0000-00-00','00:00:00.000000',0,0,0,2821,1632);
+INSERT INTO `medicion` VALUES (1,1,'0000-00-00','00:00:00.000000',0,0,0,0,0);
 /*!40000 ALTER TABLE `medicion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,15 +58,14 @@ DROP TABLE IF EXISTS `sonda`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sonda` (
-  `ID Sonda` int(10) NOT NULL AUTO_INCREMENT,
-  `ID mediciones` int(15) NOT NULL,
-  `ID usuario` int(15) NOT NULL,
+  `id sonda` int(10) NOT NULL AUTO_INCREMENT,
+  `id usuario` int(15) NOT NULL,
   `bateria` int(100) NOT NULL,
   `estado` varchar(20) NOT NULL,
-  PRIMARY KEY (`ID Sonda`),
-  KEY `id medicion fk` (`ID mediciones`),
-  CONSTRAINT `id medicion fk` FOREIGN KEY (`ID mediciones`) REFERENCES `medicion` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id sonda`),
+  KEY `id usuario fk` (`id usuario`),
+  CONSTRAINT `id usuario fk` FOREIGN KEY (`id usuario`) REFERENCES `usuarios` (`ID`) ON DELETE NO ACTION ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +74,7 @@ CREATE TABLE `sonda` (
 
 LOCK TABLES `sonda` WRITE;
 /*!40000 ALTER TABLE `sonda` DISABLE KEYS */;
-INSERT INTO `sonda` VALUES (1,1,73667766,90,'ok');
+INSERT INTO `sonda` VALUES (1,73667766,90,'ok');
 /*!40000 ALTER TABLE `sonda` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,15 +86,12 @@ DROP TABLE IF EXISTS `usuarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuarios` (
-  `ID` int(15) NOT NULL AUTO_INCREMENT,
+  `ID` int(15) NOT NULL,
   `nombre` char(25) NOT NULL,
   `usuario` char(15) NOT NULL,
   `contraseña` char(15) NOT NULL,
-  `idSonda` int(15) NOT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `idSonda` (`idSonda`),
-  CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`idSonda`) REFERENCES `sonda` (`ID Sonda`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=73667767 DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,7 +100,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (73667766,'Zaida','Admin','1234',1);
+INSERT INTO `usuarios` VALUES (73667766,'Zaida','Admin','1234');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -116,4 +113,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-06 17:03:37
+-- Dump completed on 2023-10-15 19:10:07
