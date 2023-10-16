@@ -24,7 +24,7 @@ Mi opción ha sido usar xampp, así que comenzaremos con una instalación limpia
 ## Como ejecutar los tests
 ### Test de inserción y borrado en la base de datos, tabla de medicion y usuarios
 Con el servidor operativo, acceder desde cualquier navegador a esta url: http://localhost/tests/test_bd.php. O bien pulsar
-en la pantalla de incio el botón tests. Una vez dentro, se obrevarán los datos introducidos y si han pasado con éxito las pruebas o no.También hay un botón salir para volver a la página de inicio.
+en la pantalla de incio el botón tests. También se puede desde consola ejecutando el comando php test_bd.php, por ejemplo:  C:\xampp\htdocs\Web3AZpasgon\tests php test_bd.php Una vez dentro, se obrevarán los datos introducidos y si han pasado con éxito las pruebas o no.También hay un botón salir para volver a la página de inicio.
 
 ## Bugs conocidos
 ### Bugs con la base de datos
